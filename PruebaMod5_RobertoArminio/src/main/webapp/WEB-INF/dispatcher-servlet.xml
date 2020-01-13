@@ -19,6 +19,8 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
+                <prop key="listadoMotores.htm">listadoController</prop>
+                <prop key="altaMotor.htm">altaController</prop>
                 <prop key="index.htm">indexController</prop>
             </props>
         </property>
@@ -32,6 +34,8 @@
     <!--
     The index controller.
     -->
+    <bean name="altaController" class="Controller.altaController" />
+    <bean name="listadoController" class="Controller.listadoController" />
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
