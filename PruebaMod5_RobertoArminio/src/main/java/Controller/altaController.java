@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controller;
 import Modelos.*;
 
@@ -15,21 +11,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
+//TAGS necesarios para el controlador
 @Controller
 @RequestMapping("altaMotor.htm")
 public class altaController {
     
-    
+    //Creamos un atributo de JDBCTemplate , para poder abrir la conexin , generar consultas ... mas tarde
+    // y lo acompañamos de un objeto de la clase validar , para validar la entrada de datos.
     private JdbcTemplate jdbcTemplate;
     private validarMotor validar;
     
 
     public altaController() 
     {
+        //Inicializamos en el constructor nuestro atributo JDBController asignadoselo a nuestra clase conexion 
+        //previamente creada
         Conectar con=new Conectar();
         this.jdbcTemplate=new JdbcTemplate(con.conectar() );
         this.validar = new validarMotor();
     }
+    //Mapping del metodo get de la app , no es necesario la URL ya que se la he puesto a la clase entera
     @RequestMapping(method=RequestMethod.GET) 
     public ModelAndView alta()
     {

@@ -6,9 +6,11 @@
 package Modelos;
 
 public class Motor {
+    //Creo la clase motor , fijandome en los tipos en funcion de la BBDD
     private String Modelo_pk, Fabricante;
     private int Potencia,Peso,Cantidad;
 
+    //Genero sus correspondientes constructores , incluido uno vacio
     public Motor(String Modelo_pk, String Fabricante, int Potencia, int Peso, int Cantidad) {
         this.Modelo_pk = Modelo_pk;
         this.Fabricante = Fabricante;

@@ -22,7 +22,9 @@ public class validarMotor implements Validator{
     public void validate(Object o, Errors errors) {
         
         Motor mot=(Motor)o;
-
+        
+        //Valido cada campo requerido , en el caso del modelo , aunque pide que sea igual a 5 , por comodidad 
+        //a la hora de realizar pruebas es >=5 (y porque en la BBDD es un VARCHAR(50) y no se corresponderia con el).
         if (mot.getModelo_pk().length()<=5)
         {
             errors.rejectValue("modelo_pk", "verificaModelo","Tiene que ser mayor de 5 caracteres.");
